@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auriol DJIGBEHOSSOU — Data & Impact Consultant | Expert Survey Solutions & Biostatistiques</title>
+<meta name="description" content="Data & Impact Consultant spécialisé Survey Solutions, évaluation d'impact, biostatistiques et collecte numérique d'enquêtes en Afrique. Banque mondiale, FAO, GIZ.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+/* ==================== RESET & BASE ==================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+:root {
+  --navy: #0A1628;
+  --navy-mid: #112240;
+  --navy-light: #1a3a5c;
+  --gold: #E8B84B;
+  --gold-light: #f0cc7a;
+  --gold-dark: #c99a2e;
+  --white: #FFFFFF;
+  --off-white: #F4F7FC;
+  --text-dark: #0D0D0D;
+  --text-mid: #2d3748;
+  --text-muted: #64748b;
+  --border: rgba(232, 184, 75, 0.2);
+  --card-shadow: 0 4px 24px rgba(10, 22, 40, 0.08);
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body: 'DM Sans', system-ui, sans-serif;
+  --ff-mono: 'JetBrains Mono', monospace;
+}
+body {
+  font-family: var(--ff-body);
+  color: var(--text-dark);
+  background: var(--white);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+/* ==================== NAVIGATION ==================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10, 22, 40, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 184, 75, 0.15);
+  padding: 0 5%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.nav-logo {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  background: var(--gold);
+  color: var(--navy) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600 !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+/* ==================== HERO ==================== */
+#hero {
+  min-height: 100vh;
+  background: var(--navy);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(232,184,75,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(17,34,64,0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: center;
+  padding: 80px 5% 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(232,184,75,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,184,75,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(232,184,75,0.12);
+  border: 1px solid rgba(232,184,75,0.3);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+.hero-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.hero-headline .gold { color: var(--gold); }
+.hero-headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+}
+.hero-subheadline {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 540px;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+.hero-subheadline strong { color: var(--gold); font-weight: 600; }
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.85rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.25s;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 20px rgba(232,184,75,0.3);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(232,184,75,0.4);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  padding: 0.85rem 1.8rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  transition: all 0.25s;
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.stat { text-align: left; }
+.stat-value {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.3rem;
+}
+/* Hero photo */
+.hero-photo-wrap {
+  position: relative;
+}
+.hero-photo-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  max-height: 520px;
+}
+.hero-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(10,22,40,0.6) 100%);
+  z-index: 1;
+}
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.hero-photo-accent {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--gold);
+  border-radius: 12px;
+  opacity: 0.4;
+}
+.hero-photo-accent2 {
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  opacity: 0.3;
+}
+.hero-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  background: rgba(10,22,40,0.85);
+  border: 1px solid rgba(232,184,75,0.3);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+.hero-tag-title {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hero-tag-sub {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.72rem;
+  margin-top: 0.2rem;
+}
+/* ==================== SECTION HEADERS ==================== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.section-title.light { color: var(--white); }
+.section-title.dark { color: var(--navy); }
+.section-sub {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-sub.light { color: rgba(255,255,255,0.65); }
+.section-sub.dark { color: var(--text-muted); }
+/* ==================== SECTION: MISSION PHARE ==================== */
+#mission {
+  padding: 80px 5%;
+  background: var(--navy);
+  position: relative;
+}
+.mission-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--navy-mid);
+  border: 1px solid rgba(232,184,75,0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.mission-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.mission-inner::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.mission-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.mission-clients {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.client-badge {
+  background: rgba(232,184,75,0.1);
+  border: 1px solid rgba(232,184,75,0.25);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+.mission-title-block { flex: 1; }
+.mission-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.5rem;
+}
+.mission-title {
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.mission-ref {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 0.4rem;
+}
+.mission-bullets {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.mission-bullets li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.mission-bullets li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+.mission-tagline {
+  padding: 1.25rem 1.5rem;
+  background: rgba(232,184,75,0.07);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+/* ==================== SECTION: SURVEY SOLUTIONS ==================== */
+#survey {
+  padding: 80px 5%;
+  background: var(--navy-mid);
+  position: relative;
+}
+.survey-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.survey-card {
+  background: rgba(10,22,40,0.8);
+  border: 1px solid rgba(232,184,75,0.15);
+  border-radius: 12px;
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.survey-card:hover {
+  border-color: rgba(232,184,75,0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.survey-card::after {
+  content: attr(data-num);
+  position: absolute;
+  bottom: -10px; right: 10px;
+  font-family: var(--ff-display);
+  font-size: 5rem;
+  font-weight: 900;
+  color: rgba(232,184,75,0.04);
+  line-height: 1;
+}
+.survey-icon {
+  width: 44px; height: 44px;
+  background: rgba(232,184,75,0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.survey-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+.survey-card-title {
+  font-family: var(--ff-display);
+  font-size: 1.05rem;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.survey-card-text {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+}
+.survey-card-tag {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+  background: rgba(232,184,75,0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+.survey-encart {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  background: rgba(232,184,75,0.06);
+  border: 1px solid rgba(232,184,75,0.2);
+  border-radius: 10px;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.survey-encart svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
+.survey-encart p { color: rgba(255,255,255,0.75); font-size: 0.92rem; }
+.survey-encart strong { color: var(--gold); }
+/* ==================== SECTION: BIOSTATISTIQUES & SANTÉ ==================== */
+#biosante {
+  padding: 80px 5%;
+  background: var(--off-white);
+}
+.biosante-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.biosante-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.biosante-photo-col { position: relative; }
+.biosante-photo-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  max-height: 480px;
+  box-shadow: 0 20px 60px rgba(10,22,40,0.15);
+}
+.biosante-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.biosante-overlay-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--navy);
+  border: 1px solid rgba(232,184,75,0.3);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+.biosante-overlay-stat {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  color: var(--gold);
+  font-weight: 700;
+  line-height: 1;
+}
+.biosante-overlay-label {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+.biosante-content h3 {
+  font-family: var(--ff-display);
+  font-size: 1.8rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.biosante-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.biosante-content strong { color: var(--navy); font-weight: 600; }
+.biosante-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--navy);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+.pill.gold-pill {
+  background: rgba(232,184,75,0.12);
+  color: var(--gold-dark);
+  border: 1px solid rgba(232,184,75,0.3);
+}
+.biosante-exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.exp-card {
+  background: var(--white);
+  border: 1px solid rgba(10,22,40,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  border-top: 3px solid var(--gold);
+  transition: transform 0.25s;
+}
+.exp-card:hover { transform: translateY(-3px); }
+.exp-year {
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+.exp-card h4 {
+  font-family: var(--ff-display);
+  font-size: 0.95rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.exp-card p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.exp-client {
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+/* ==================== SECTION: PROBLÈME → SOLUTION ==================== */
+#problemes {
+  padding: 80px 5%;
+  background: var(--white);
+}
+.problemes-inner { max-width: 1100px; margin: 0 auto; }
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.problem-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(10,22,40,0.06);
+}
+.problem-top {
+  background: var(--navy);
+  padding: 1.5rem;
+  border-left: 4px solid var(--gold);
+}
+.problem-icon {
+  width: 36px; height: 36px;
+  background: rgba(232,184,75,0.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 0.75rem;
+}
+.problem-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 2; }
+.problem-q {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.problem-bottom {
+  background: var(--off-white);
+  padding: 1.5rem;
+}
+.problem-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.problem-solution {
+  color: var(--text-mid);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.problem-solution strong { color: var(--navy); }
+/* ==================== SECTION: POSITIONNEMENT ==================== */
+#positionnement {
+  padding: 80px 5%;
+  background: var(--navy);
+}
+.position-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.position-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+.position-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(232,184,75,0.25);
+}
+.position-card-icon {
+  width: 48px; height: 48px;
+  background: rgba(232,184,75,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.position-card-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+.position-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.position-card p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.65; }
+/* ==================== SECTION: EXPERTISE ==================== */
+#expertise {
+  padding: 80px 5%;
+  background: var(--off-white);
+}
+.expertise-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.expertise-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--gold);
+  transition: transform 0.25s;
+}
+.expertise-card:hover { transform: translateY(-4px); }
+.expertise-card-icon {
+  width: 44px; height: 44px;
+  background: rgba(10,22,40,0.06);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+}
+.expertise-card-icon svg { width: 22px; height: 22px; stroke: var(--navy); fill: none; stroke-width: 1.8; }
+.expertise-card h3 {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.expertise-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+.expertise-result {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(10,22,40,0.06);
+  font-size: 0.78rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.expertise-result::before { content: '→'; }
+/* ==================== SECTION: SOCIAL PROOF ==================== */
+#preuves {
+  padding: 80px 5%;
+  background: var(--white);
+}
+.temoignages {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.temoignage-card {
+  background: var(--off-white);
+  border-radius: 12px;
+  padding: 2rem;
+  border-top: 3px solid var(--gold);
+  position: relative;
+}
+.temoignage-quote {
+  font-size: 3rem;
+  color: var(--gold);
+  opacity: 0.3;
+  font-family: var(--ff-display);
+  line-height: 0.5;
+  margin-bottom: 1rem;
+}
+.temoignage-text {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+.temoignage-result {
+  display: inline-block;
+  background: rgba(232,184,75,0.12);
+  color: var(--gold-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.temoignage-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.author-avatar {
+  width: 38px; height: 38px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.author-info strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--navy);
+  font-weight: 700;
+}
+.author-info span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.logos-band {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--navy);
+  border-radius: 12px;
+  text-align: center;
+}
+.logos-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 1.25rem;
+}
+.logos-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  flex-wrap: wrap;
+}
+.logo-item {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.logo-item:hover { color: var(--gold); }
+.logo-divider { color: rgba(255,255,255,0.15); }
+.stats-encart {
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  background: var(--off-white);
+  border: 1px solid rgba(10,22,40,0.08);
+  border-radius: 10px;
+  padding: 1.25rem 2rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+.stats-encart strong { color: var(--navy); font-weight: 700; }
+/* ==================== SECTION: MÉTHODE ==================== */
+#methode {
+  padding: 80px 5%;
+  background: var(--off-white);
+}
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: calc(12.5% + 20px);
+  right: calc(12.5% + 20px);
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), rgba(232,184,75,0.2));
+}
+.timeline-step {
+  padding: 0 1rem;
+  text-align: center;
+  position: relative;
+}
+.step-num {
+  width: 56px; height: 56px;
+  background: var(--navy);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin: 0 auto 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+.step-title {
+  font-family: var(--ff-display);
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.step-text { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+/* ==================== SECTION: CTA CENTRAL ==================== */
+#cta {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a2e4a 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  top: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(232,184,75,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+#cta::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(232,184,75,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.cta-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.cta-headline span { color: var(--gold); }
+.cta-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.cta-note {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.cta-note span { display: flex; align-items: center; gap: 0.35rem; }
+.cta-note span::before { content: '✓'; color: var(--gold); font-size: 0.7rem; }
+/* ==================== FOOTER ==================== */
+footer {
+  background: #060e1a;
+  padding: 60px 5% 30px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.footer-brand h3 {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.footer-brand p {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.footer-tagline {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+}
+.footer-nav h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 1rem;
+}
+.footer-nav ul { list-style: none; }
+.footer-nav li { margin-bottom: 0.6rem; }
+.footer-nav a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.2s;
+}
+.footer-nav a:hover { color: var(--gold); }
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+.footer-contact a:hover { color: var(--gold); }
+.footer-contact svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
+.footer-bottom {
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.25);
+}
+.footer-bottom span { color: var(--gold); }
+/* ==================== ANIMATIONS ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .survey-grid { grid-template-columns: repeat(2, 1fr); }
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+  .biosante-exp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 4%; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: var(--navy);
+    padding: 1.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-photo-wrap { order: -1; max-width: 280px; margin: 0 auto; }
+  .hero-ctas { justify-content: center; }
+  .hero-stats { justify-content: center; }
+  .mission-bullets { grid-template-columns: 1fr; }
+  .mission-header { flex-direction: column; }
+  .survey-grid { grid-template-columns: 1fr; }
+  .biosante-grid { grid-template-columns: 1fr; }
+  .biosante-photo-col { display: none; }
+  .biosante-exp-grid { grid-template-columns: 1fr; }
+  .problem-cards { grid-template-columns: 1fr; }
+  .position-grid { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .temoignages { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: 1fr 1fr; }
+  .timeline::before { display: none; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .hero-headline { font-size: 2rem; }
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .timeline { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Auriol <span>DJIGBEHOSSOU</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#mission">Mission phare</a></li>
+    <li><a href="#survey">Survey Solutions</a></li>
+    <li><a href="#biosante">Biostat & Santé</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#preuves">Références</a></li>
+    <li><a href="#cta" class="nav-cta">Me contacter</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-inner">
+    <!-- Texte gauche -->
+    <div class="hero-content">
+      <div class="hero-badge">Data & Impact Consultant</div>
+      <h1 class="hero-headline">
+        Survey Solutions.<br>
+        FAO. Banque mondiale.<br>
+        <span class="gold">Le terrain prouvé.</span>
+      </h1>
+      <p class="hero-subheadline">
+        De la conception de vos questionnaires à l'analyse d'impact finale,
+        Auriol maîtrise <strong>Survey Solutions bout-en-bout</strong> —
+        préchargement, déploiement HQ, scripts HFC sous R —
+        et livre des évaluations rigoureuses pour les bailleurs internationaux les plus exigeants.
+      </p>
+      <div class="hero-ctas">
+        <a href="mailto:raouldjigbe@gmail.com" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          Discutons de votre mission
+        </a>
+        <a href="https://wa.me/22961628654" target="_blank" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp direct
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Missions livrées</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">10</div>
+          <div class="stat-label">Pays couverts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">2 096</div>
+          <div class="stat-label">Ménages préchargés OCRI/FAO</div>
+        </div>
+      </div>
+    </div>
+    <!-- Photo droite -->
+    <div class="hero-photo-wrap fade-in fade-in-delay-2">
+      <div class="hero-photo-frame">
+        <img src="Auriol_photo.jpeg" alt="Auriol DJIGBEHOSSOU — Data & Impact Consultant">
+      </div>
+      <div class="hero-photo-accent"></div>
+      <div class="hero-photo-accent2"></div>
+      <div class="hero-tag">
+        <div class="hero-tag-title">Expert Survey Solutions</div>
+        <div class="hero-tag-sub">Banque mondiale · FAO · GIZ</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== MISSION PHARE ==================== -->
+<section id="mission">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Mission de référence</span>
+    <h2 class="section-title light">L'évaluation qui définit le standard</h2>
+  </div>
+  <div class="mission-inner fade-in">
+    <div class="mission-header">
+      <div class="mission-title-block">
+        <div class="mission-label">Évaluation d'impact climatique · Bénin · 2024–2025</div>
+        <h3 class="mission-title">Initiative de Résilience Climatique<br>du Bassin de l'Ouémé — OCRI</h3>
+        <div class="mission-ref">Réf. projet : GCP/BEN/060/GCF</div>
+      </div>
+      <div class="mission-clients">
+        <div class="client-badge">FAO Bénin</div>
+        <div class="client-badge">Fonds Vert pour le Climat</div>
+        <div class="client-badge">Banque mondiale</div>
+      </div>
+    </div>
+    <ul class="mission-bullets">
+      <li>Préchargement de <strong>2 096 ménages</strong> dans Survey Solutions (1 065 groupe contrôle + 1 031 groupe traitement) — zéro erreur d'identification terrain</li>
+      <li>2 questionnaires digitalisés (ménage + communautaire chefs de village) avec logiques conditionnelles et validations automatiques intégrées</li>
+      <li>Script R HFC conçu et déployé pour le contrôle qualité quotidien automatisé des données collectées</li>
+      <li>Déploiement complet du serveur Headquarters (HQ) : comptes superviseurs, enquêteurs, assignation géographique</li>
+      <li>Formation des agents enquêteurs sur Survey Solutions Interviewer — de zéro à opérationnel</li>
+      <li>Gestion de toutes les phases : pré-test, phase pilote, enquête principale</li>
+    </ul>
+    <div class="mission-tagline">
+      Un projet financé par le Fonds Vert pour le Climat. 2 096 ménages préchargés, un double questionnaire digitalisé, un dispositif HFC sous R — ce niveau de responsabilité, ce niveau de rigueur. C'est exactement ce que vos données méritent.
+    </div>
+  </div>
+</section>
+<!-- ==================== SURVEY SOLUTIONS ==================== -->
+<section id="survey">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Compétence signature</span>
+    <h2 class="section-title light">Survey Solutions — Du préchargement au rapport final, sans zone d'ombre</h2>
+    <p class="section-sub light">L'outil de référence de la Banque mondiale. Maîtrisé bout-en-bout.</p>
+  </div>
+  <div class="survey-grid">
+    <div class="survey-card fade-in" data-num="1">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div class="survey-card-title">Préchargement de données</div>
+      <p class="survey-card-text">Identifiants ménages, variables de stratification et zones géographiques chargés avant le terrain. Zéro doublon, assignation automatique des enquêteurs. Démontré sur 2 096 ménages (OCRI/FAO).</p>
+      <span class="survey-card-tag">Preloading · CAPI</span>
+    </div>
+    <div class="survey-card fade-in fade-in-delay-1" data-num="2">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="15" x2="11" y2="15"/></svg>
+      </div>
+      <div class="survey-card-title">Design de questionnaire (Designer)</div>
+      <p class="survey-card-text">Logiques conditionnelles, rosters dynamiques, filtres de routing, validations qui rejettent les données aberrantes avant soumission. Questionnaires complexes, zéro bug terrain.</p>
+      <span class="survey-card-tag">Designer · Rosters · Routing</span>
+    </div>
+    <div class="survey-card fade-in fade-in-delay-2" data-num="3">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="survey-card-title">Déploiement serveur HQ</div>
+      <p class="survey-card-text">Configuration complète du serveur Headquarters : création comptes superviseurs et enquêteurs, paramétrage CAPI/CAWI, gestion des versions de questionnaire en production.</p>
+      <span class="survey-card-tag">Headquarters · CAPI · CAWI</span>
+    </div>
+    <div class="survey-card fade-in fade-in-delay-1" data-num="4">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="survey-card-title">Contrôle qualité HFC sous R</div>
+      <p class="survey-card-text">Scripts R automatisés connectés à l'API Survey Solutions : détection anomalies, incohérences inter-variables, outliers et doublons. Rapport qualité généré automatiquement chaque matin pour le superviseur.</p>
+      <span class="survey-card-tag">R · API · High Frequency Checks</span>
+    </div>
+    <div class="survey-card fade-in fade-in-delay-2" data-num="5">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="survey-card-title">Formation des agents enquêteurs</div>
+      <p class="survey-card-text">De zéro à opérationnel : navigation dans Interviewer, synchronisation, gestion des refus, protocoles GPS, bonnes pratiques terrain. Formation en salle + accompagnement phase pilote.</p>
+      <span class="survey-card-tag">Interviewer · Formation · Pilote</span>
+    </div>
+    <div class="survey-card fade-in fade-in-delay-3" data-num="6">
+      <div class="survey-icon">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="survey-card-title">XLSForm universel</div>
+      <p class="survey-card-text">Conception de questionnaires compatibles Survey Solutions, KoboToolbox et ODK. Un seul format XLSForm proprement structuré, déployable sur plusieurs plateformes sans redéveloppement.</p>
+      <span class="survey-card-tag">XLSForm · KoboToolbox · ODK</span>
+    </div>
+  </div>
+  <div class="survey-encart fade-in">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <p>Vous travaillez sur <strong>KoboToolbox</strong> ou <strong>XLSForm</strong> ? Ces compétences sont également couvertes. <strong>Un seul interlocuteur pour toute votre chaîne de collecte numérique.</strong></p>
+  </div>
+</section>
+<!-- ==================== BIOSTATISTIQUES & SANTÉ PUBLIQUE ==================== -->
+<section id="biosante">
+  <div class="biosante-inner">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Profil complémentaire</span>
+      <h2 class="section-title dark">Biostatisticien & Expert Santé Publique</h2>
+      <p class="section-sub dark">Master 2 Biostatistiques (LABEF/UAC). R comme langage natif. Enquêtes CAP, DHIS2 et analyse épidémiologique — un profil complet au croisement des données et de la santé.</p>
+    </div>
+    <div class="biosante-grid fade-in">
+      <!-- Photo 2 -->
+      <div class="biosante-photo-col">
+        <div class="biosante-photo-frame">
+          <img src="Auriol.JPG" alt="Auriol DJIGBEHOSSOU — Expert Biostatistiques & Santé Publique">
+        </div>
+        <div class="biosante-overlay-card">
+          <div class="biosante-overlay-stat">M2</div>
+          <div class="biosante-overlay-label">Biostatistiques<br>LABEF / UAC</div>
+        </div>
+      </div>
+      <!-- Contenu -->
+      <div class="biosante-content">
+        <h3>Les données de santé ont leurs propres règles.<br>Je les connais.</h3>
+        <p>
+          La maîtrise statistique acquise en Master Biostatistiques au LABEF/UAC n'est pas un titre
+          académique abstrait. Elle se traduit concrètement : modèles de survie, régressions logistiques
+          pour données binaires, analyse de données censurées, calcul de taille d'échantillon pour
+          essais randomisés. <strong>R est mon environnement de travail quotidien</strong>, pas un outil occasionnel.
+        </p>
+        <p>
+          Les enquêtes <strong>CAP (Connaissances, Attitudes, Pratiques)</strong> en santé publique
+          exigent une rigueur particulière dans la conception du questionnaire et l'interprétation des
+          résultats. DHIS2, la plateforme de référence pour les systèmes d'information sanitaire en
+          Afrique, complète ce dispositif pour le suivi des indicateurs de santé au niveau national et
+          sous-national.
+        </p>
+        <div class="biosante-pills">
+          <span class="pill">Biostatistiques</span>
+          <span class="pill">R (avancé)</span>
+          <span class="pill">Enquêtes CAP</span>
+          <span class="pill">DHIS2</span>
+          <span class="pill">Modèles de survie</span>
+          <span class="pill">Régression logistique</span>
+          <span class="pill gold-pill">STATA</span>
+          <span class="pill gold-pill">Python</span>
+          <span class="pill gold-pill">Épidémiologie quantitative</span>
+        </div>
+      </div>
+    </div>
+    <!-- Expériences santé -->
+    <div class="section-header fade-in" style="margin-top:3rem;">
+      <span class="section-eyebrow">Expériences secteur santé</span>
+      <h3 class="section-title dark" style="font-size:1.8rem;">Missions livrées dans l'écosystème santé & nutrition</h3>
+    </div>
+    <div class="biosante-exp-grid">
+      <div class="exp-card fade-in">
+        <div class="exp-year">2024</div>
+        <h4>Enquête CAP sur les pratiques d'hygiène et d'assainissement</h4>
+        <p>Conception du questionnaire CAP, digitalisation sous KoboToolbox, collecte auprès de 480 ménages ruraux, analyse et rapport de recommandations pour les équipes terrain.</p>
+        <div class="exp-client">ONG · Secteur WASH · Bénin</div>
+      </div>
+      <div class="exp-card fade-in fade-in-delay-1">
+        <div class="exp-year">2024</div>
+        <h4>Analyse des indicateurs de nutrition infantile via DHIS2</h4>
+        <p>Extraction et analyse des données DHIS2 sur les indicateurs MAG/MAS, construction de tableaux de bord Power BI pour le suivi des indicateurs de malnutrition aiguë dans 3 zones sanitaires.</p>
+        <div class="exp-client">Partenaire institutionnel · Bénin / Tchad</div>
+      </div>
+      <div class="exp-card fade-in fade-in-delay-2">
+        <div class="exp-year">2023</div>
+        <h4>Évaluation des connaissances sur le paludisme (enquête CAP)</h4>
+        <p>Conception et déploiement d'une enquête CAP sur les connaissances, attitudes et pratiques relatives au paludisme. Analyse bivariée et multivariée, rapport avec score CAP par segment de population.</p>
+        <div class="exp-client">Programme santé · Afrique de l'Ouest</div>
+      </div>
+      <div class="exp-card fade-in fade-in-delay-3">
+        <div class="exp-year">2023</div>
+        <h4>Modélisation statistique pour une étude de cohorte nutritionnelle</h4>
+        <p>Analyse de données longitudinales avec modèles mixtes linéaires sous R. Étude des trajectoires de croissance infantile sur 12 mois, rapport biostatistique complet livré au partenaire technique.</p>
+        <div class="exp-client">Étude académique · LABEF/UAC</div>
+      </div>
+      <div class="exp-card fade-in fade-in-delay-1">
+        <div class="exp-year">2025</div>
+        <h4>Tableau de bord DHIS2 pour le suivi VIH/SIDA</h4>
+        <p>Configuration d'indicateurs personnalisés dans DHIS2, extraction de données et construction d'un tableau de bord de monitoring pour le suivi du programme PTME dans deux régions sanitaires.</p>
+        <div class="exp-client">Programme PTME · Afrique subsaharienne</div>
+      </div>
+      <div class="exp-card fade-in fade-in-delay-2">
+        <div class="exp-year">2025</div>
+        <h4>Scripts R d'analyse de survie — essai clinique Phase II</h4>
+        <p>Développement de scripts R pour l'analyse de survie (Kaplan-Meier, Cox), gestion de la censure, test du log-rank. Livrables : rapport statistique + code reproductible documenté.</p>
+        <div class="exp-client">Structure de recherche · Cotonou</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== PROBLÈMES → SOLUTIONS ==================== -->
+<section id="problemes">
+  <div class="problemes-inner">
+    <div class="section-header fade-in">
+      <span class="section-eyebrow">Valeur ajoutée</span>
+      <h2 class="section-title dark">Vous cherchez un consultant qui…</h2>
+    </div>
+    <div class="problem-cards">
+      <div class="problem-card fade-in">
+        <div class="problem-top">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <p class="problem-q">"Vos données de terrain arrivent avec des erreurs critiques — doublons, valeurs aberrantes, identifiants incorrects."</p>
+        </div>
+        <div class="problem-bottom">
+          <div class="problem-label">→ La réponse concrète</div>
+          <p class="problem-solution"><strong>Préchargement Survey Solutions</strong> + <strong>scripts HFC quotidiens sous R</strong> : les erreurs sont détectées avant soumission. Sur 2 096 ménages OCRI/FAO, zéro doublon d'identification terrain.</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-1">
+        <div class="problem-top">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <p class="problem-q">"Votre questionnaire Survey Solutions bug sur le terrain et personne dans l'équipe ne sait comment le corriger."</p>
+        </div>
+        <div class="problem-bottom">
+          <div class="problem-label">→ La réponse concrète</div>
+          <p class="problem-solution">Configuration <strong>bout-en-bout</strong> : Designer, serveur HQ, Interviewer. Diagnostic et correction en temps réel. Un seul interlocuteur qui connaît toute la chaîne Survey Solutions.</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-2">
+        <div class="problem-top">
+          <div class="problem-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+          </div>
+          <p class="problem-q">"Vos agents enquêteurs ne maîtrisent pas les outils numériques et la collecte terrain est chaotique."</p>
+        </div>
+        <div class="problem-bottom">
+          <div class="problem-label">→ La réponse concrète</div>
+          <p class="problem-solution">Formation terrain sur <strong>Survey Solutions, KoboToolbox, XLSForm</strong> — de zéro à opérationnel en 1 à 2 jours. Phase pilote accompagnée et protocoles terrain documentés.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== POSITIONNEMENT ==================== -->
+<section id="positionnement">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Avantage compétitif</span>
+    <h2 class="section-title light">Quatre raisons de choisir Auriol plutôt qu'un autre consultant</h2>
+  </div>
+  <div class="position-grid">
+    <div class="position-card fade-in">
+      <div class="position-card-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div>
+        <h3>Expert Survey Solutions reconnu</h3>
+        <p>Préchargement, HQ, HFC sous R, formation : la maîtrise complète de l'outil de référence de la Banque mondiale. Rare en Afrique francophone.</p>
+      </div>
+    </div>
+    <div class="position-card fade-in fade-in-delay-1">
+      <div class="position-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div>
+        <h3>Terrain prouvé, références internationales</h3>
+        <p>20+ missions pour Banque mondiale, FAO, GIZ, CORAF, Enabel en moins de 3 ans. Pas de promesses — des livrables documentés.</p>
+      </div>
+    </div>
+    <div class="position-card fade-in fade-in-delay-2">
+      <div class="position-card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <div>
+        <h3>Multi-pays, multi-filières, multi-outils</h3>
+        <p>10 pays d'intervention, filières agricoles variées, secteur santé publique. Survey Solutions, KoboToolbox, CSPro, DHIS2, R, STATA, Python — un seul interlocuteur.</p>
+      </div>
+    </div>
+    <div class="position-card fade-in fade-in-delay-3">
+      <div class="position-card-icon">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div>
+        <h3>De la donnée brute à la décision stratégique</h3>
+        <p>Collecte, apurement, analyse économétrique ou biostatistique, rapport, présentation : la chaîne data complète. Pas de coupure entre le technicien terrain et l'analyste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ==================== EXPERTISE ==================== -->
+<section id="expertise">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Domaines d'intervention</span>
+    <h2 class="section-title dark">Ce que je livre, concrètement</h2>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card fade-in">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>Évaluation de projets</h3>
+      <p>Baseline, mi-parcours, finale et impact. Calcul TEP/TEF, analyse de pertinence, efficience, efficacité selon les standards OCDE.</p>
+      <div class="expertise-result">Rapport conforme AFD, GIZ, Enabel, FAO</div>
+    </div>
+    <div class="expertise-card fade-in fade-in-delay-1">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3>Digitalisation d'enquêtes</h3>
+      <p>Survey Solutions, KoboToolbox, XLSForm, CSPro : conception, déploiement, formation agents, contrôle qualité HFC en temps réel.</p>
+      <div class="expertise-result">Collecte fiable sur 1 000+ ménages</div>
+    </div>
+    <div class="expertise-card fade-in fade-in-delay-2">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.3 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.13 6.13l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <h3>Biostatistiques & Santé publique</h3>
+      <p>Enquêtes CAP, analyse épidémiologique, modèles de survie, DHIS2, suivi d'indicateurs de santé. R comme outil de livraison reproductible.</p>
+      <div class="expertise-result">Scripts R documentés + rapport reproductible</div>
+    </div>
+    <div class="expertise-card fade-in fade-in-delay-1">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Analyse de chaînes de valeur</h3>
+      <p>Identification des goulots d'étranglement, modélisation économétrique, prévision de tendances sur filières agricoles (karité, ananas, riz, bétail, biodigesteurs).</p>
+      <div class="expertise-result">Recommandations actionnables par filière</div>
+    </div>
+    <div class="expertise-card fade-in fade-in-delay-2">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3>Analyse économique & financière</h3>
+      <p>ACB, ACE, analyse de sensibilité, retombées socio-économiques. Rapports validés pour programmes DDC, AFD, Banque mondiale.</p>
+      <div class="expertise-result">Rapport ACB validé pour bailleurs</div>
+    </div>
+    <div class="expertise-card fade-in fade-in-delay-3">
+      <div class="expertise-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <h3>Suivi-Évaluation (GAR)</h3>
+      <p>Cadres logiques, indicateurs SMART, rapports de performance, tableaux de bord Power BI / Tableau. Formation des équipes S&E internes.</p>
+      <div class="expertise-result">Système S&E opérationnel déployé</div>
+    </div>
+  </div>
+</section>
+<!-- ==================== SOCIAL PROOF ==================== -->
+<section id="preuves">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Confiance</span>
+    <h2 class="section-title dark">Ils m'ont confié leurs données</h2>
+  </div>
+  <div class="temoignages">
+    <div class="temoignage-card fade-in">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">Nous avions 2 096 ménages à précharger dans Survey Solutions avec une contrainte de délai serrée. Auriol a livré le préchargement sans une seule erreur d'identification, et son script HFC était opérationnel dès le premier jour de collecte. C'est exactement ce qu'on attend d'un expert.</p>
+      <span class="temoignage-result">✦ 2 096 ménages préchargés · HFC J+1</span>
+      <div class="temoignage-author">
+        <div class="author-avatar">MK</div>
+        <div class="author-info">
+          <strong>Moussa Kaboré</strong>
+          <span>Chef de projet OCRI · FAO Bénin</span>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card fade-in fade-in-delay-1">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">Nos agents n'avaient jamais utilisé KoboToolbox. En une journée de formation, ils étaient opérationnels. Le lendemain matin, la collecte démarrait sans incident. La qualité de la pédagogie d'Auriol sur les outils numériques est remarquable.</p>
+      <span class="temoignage-result">✦ Formation J+1 · Collecte démarrée J+2</span>
+      <div class="temoignage-author">
+        <div class="author-avatar">AC</div>
+        <div class="author-info">
+          <strong>Adélaïde Casterman</strong>
+          <span>Coordinatrice programme · Îles de Paix</span>
+        </div>
+      </div>
+    </div>
+    <div class="temoignage-card fade-in fade-in-delay-2">
+      <div class="temoignage-quote">"</div>
+      <p class="temoignage-text">Déployer un questionnaire XLSForm simultanément dans 5 pays sans bug — c'est un niveau d'expertise que peu de consultants peuvent prétendre. Auriol a géré la coordination technique de A à Z, et les équipes terrain n'ont signalé aucun incident.</p>
+      <span class="temoignage-result">✦ 5 pays simultanés · Zéro bug signalé</span>
+      <div class="temoignage-author">
+        <div class="author-avatar">SN</div>
+        <div class="author-info">
+          <strong>Saliou Ndiaye</strong>
+          <span>Responsable programme · CORAF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logos-band fade-in" style="margin-top:2rem;">
+    <div class="logos-label">Structures ayant fait confiance à Auriol DJIGBEHOSSOU</div>
+    <div class="logos-list">
+      <span class="logo-item">Banque mondiale</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">FAO</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">GIZ</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">Enabel</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">CORAF</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">Îles de Paix</span>
+      <span class="logo-divider">·</span>
+      <span class="logo-item">Blue Skies / DeveloPPP</span>
+    </div>
+  </div>
+  <div class="stats-encart fade-in">
+    <strong>10 pays</strong> d'intervention · <strong>20+ missions</strong> livrées · <strong>2 096 ménages</strong> préchargés sur une seule mission FAO · <strong>5 pays simultanés</strong> pour CORAF
+  </div>
+</section>
+<!-- ==================== MÉTHODE ==================== -->
+<section id="methode">
+  <div class="section-header fade-in">
+    <span class="section-eyebrow">Process de travail</span>
+    <h2 class="section-title dark">Comment je travaille — de la réception des TDR à la livraison</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-step fade-in">
+      <div class="step-num">1</div>
+      <div class="step-title">Cadrage</div>
+      <p class="step-text">Lecture des TDR, analyse du besoin, choix de l'outil (Survey Solutions / KoboToolbox / CSPro) et proposition de méthodologie adaptée.</p>
+    </div>
+    <div class="timeline-step fade-in fade-in-delay-1">
+      <div class="step-num">2</div>
+      <div class="step-title">Proposition</div>
+      <p class="step-text">Offre technique et financière personnalisée livrée sous 48h. Budget détaillé, planning de mission, profil des livrables attendus.</p>
+    </div>
+    <div class="timeline-step fade-in fade-in-delay-2">
+      <div class="step-num">3</div>
+      <div class="step-title">Exécution</div>
+      <p class="step-text">Digitalisation, préchargement, déploiement, formation agents, collecte, apurement HFC, analyse. Points d'étape réguliers et transparence totale.</p>
+    </div>
+    <div class="timeline-step fade-in fade-in-delay-3">
+      <div class="step-num">4</div>
+      <div class="step-title">Livraison</div>
+      <p class="step-text">Rapport final + base de données nettoyée et documentée + présentation PowerPoint des résultats. Code R fourni et reproductible.</p>
+    </div>
+  </div>
+</section>
+<!-- ==================== CTA CENTRAL ==================== -->
+<section id="cta">
+  <div class="cta-inner fade-in">
+    <h2 class="cta-headline">
+      Un questionnaire mal configuré coûte plus cher<br>
+      que la mission entière.<br>
+      <span>Ne prenez pas ce risque.</span>
+    </h2>
+    <p class="cta-sub">
+      Chaque semaine de collecte avec des données non apurées, c'est une analyse compromise
+      et un rapport qui ne résiste pas au regard d'un bailleur exigeant.
+      Premier échange gratuit — sous 24h — sans engagement.
+    </p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="mailto:raouldjigbe@gmail.com" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        raouldjigbe@gmail.com
+      </a>
+      <a href="https://wa.me/22961628654" target="_blank" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp direct
+      </a>
+    </div>
+    <div class="cta-note">
+      <span>Premier échange gratuit</span>
+      <span>Réponse sous 24h</span>
+      <span>Sans engagement</span>
+      <span>Devis sous 48h</span>
+    </div>
+  </div>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Auriol DJIGBEHOSSOU</h3>
+        <p>Data & Impact Consultant spécialisé en évaluation de projets, analyse de données et collecte numérique d'enquêtes en Afrique. Survey Solutions, KoboToolbox, R, DHIS2, Biostatistiques.</p>
+        <div class="footer-tagline">Expert Survey Solutions · De la collecte à la décision</div>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#mission">Mission phare OCRI/FAO</a></li>
+          <li><a href="#survey">Expert Survey Solutions</a></li>
+          <li><a href="#biosante">Biostatistiques & Santé</a></li>
+          <li><a href="#expertise">Domaines d'expertise</a></li>
+          <li><a href="#preuves">Références & Témoignages</a></li>
+          <li><a href="#methode">Comment je travaille</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.3);margin-bottom:1rem;">Contact direct</h4>
+        <a href="mailto:raouldjigbe@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          raouldjigbe@gmail.com
+        </a>
+        <a href="https://wa.me/22961628654" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          +229 01 61 62 86 54
+        </a>
+        <a href="https://www.linkedin.com/in/aurioldjigbehossou-9a936026a" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Auriol DJIGBEHOSSOU — Data & Impact Consultant. Tous droits réservés.</p>
+      <p>Bénin · <span>Disponible pour missions internationales</span></p>
+    </div>
+  </div>
+</footer>
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+// Navigation mobile
+function toggleNav() {
+  const links = document.getElementById('navLinks');
+  links.classList.toggle('open');
+}
+// Close nav on link click (mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+// Scroll animations avec Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offset = 72;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+// Navbar scrolled style
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.3)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
